@@ -8,8 +8,8 @@ public abstract class Animal extends IslandItem {
     int kilogramsForSatiety;
 
 
-    public Animal(int positionX, int positionY) {
-        super(positionX, positionY);
+    public Animal() {
+        super();
     }
 
     public void eat() {

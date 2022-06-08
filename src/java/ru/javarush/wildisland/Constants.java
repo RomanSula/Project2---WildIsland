@@ -1,0 +1,27 @@
+package ru.javarush.wildisland;
+
+import ru.javarush.wildisland.animals.abstracts.Animal;
+import ru.javarush.wildisland.animals.herbivore.Boar;
+
+import java.util.HashMap;
+
+public class Constants {
+    public static final int BOAR_AMOUNT = 50;
+    public static final int BUFFALO_AMOUNT = 10;
+    public static final int CATERPILLAR_AMOUNT = 1000;
+    public static final int DEER_AMOUNT = 20;
+    public static final int DUCK_AMOUNT = 200;
+    public static final int GOAT_AMOUNT = 140;
+    public static final int HORSE_AMOUNT = 20;
+    public static final int MOUSE_AMOUNT = 500;
+    public static final int RABBIT_AMOUNT = 150;
+    public static final int SHEEP_AMOUNT = 140;
+
+    public static final int BEAR_AMOUNT = 5;
+    public static final int BOA_AMOUNT = 30;
+    public static final int EAGLE_AMOUNT = 20;
+    public static final int FOX_AMOUNT = 30;
+    public static final int WOLF_AMOUNT = 30;
+
+
+}
