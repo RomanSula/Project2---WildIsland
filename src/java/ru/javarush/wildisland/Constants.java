@@ -1,7 +1,8 @@
 package ru.javarush.wildisland;
 
 import ru.javarush.wildisland.animals.abstracts.Animal;
-import ru.javarush.wildisland.animals.herbivore.Boar;
+import ru.javarush.wildisland.animals.herbivore.*;
+import ru.javarush.wildisland.animals.predator.*;
 
 import java.util.HashMap;
 
@@ -23,5 +24,23 @@ public class Constants {
     public static final int FOX_AMOUNT = 30;
     public static final int WOLF_AMOUNT = 30;
 
+    public static HashMap<IslandItem, Integer> islandItems = new HashMap<>();
+    static {
+        islandItems.put(new Boar(), BOAR_AMOUNT);
+        islandItems.put(new Buffalo(), BUFFALO_AMOUNT);
+        islandItems.put(new Caterpillar(), CATERPILLAR_AMOUNT);
+        islandItems.put(new Deer(), DEER_AMOUNT);
+        islandItems.put(new Duck(), DUCK_AMOUNT);
+        islandItems.put(new Goat(), GOAT_AMOUNT);
+        islandItems.put(new Horse(), HORSE_AMOUNT);
+        islandItems.put(new Mouse(), MOUSE_AMOUNT);
+        islandItems.put(new Rabbit(), RABBIT_AMOUNT);
+        islandItems.put(new Sheep(), SHEEP_AMOUNT);
 
+        islandItems.put(new Bear(), BEAR_AMOUNT);
+        islandItems.put(new Boa(), BOA_AMOUNT);
+        islandItems.put(new Eagle(), EAGLE_AMOUNT);
+        islandItems.put(new Fox(), FOX_AMOUNT);
+        islandItems.put(new Wolf(), WOLF_AMOUNT);
+    }
 }

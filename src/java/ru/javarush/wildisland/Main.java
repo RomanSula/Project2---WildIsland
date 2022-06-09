@@ -8,7 +8,8 @@ public class Main {
         islandArea.islandArray = CellsGenerator.generate(5, 5);
         System.out.println("----------------");
 
-
+        WorldGenerator.generate();
+        System.out.println("-------");
 
 
 
