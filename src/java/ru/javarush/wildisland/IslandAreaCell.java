@@ -1,5 +1,7 @@
 package ru.javarush.wildisland;
 
+import ru.javarush.wildisland.animals.abstracts.IslandItem;
+
 import java.util.Set;
 
 public class IslandAreaCell {

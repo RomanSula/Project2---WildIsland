@@ -1,10 +1,10 @@
-package ru.javarush.wildisland;
+package ru.javarush.wildisland.animals.abstracts;
 
 public abstract class IslandItem {
     public int positionX;
     public int positionY;
-    public int weight;
-    public int maxItemCount;
+    public double weight;
+
 
     public IslandItem() {
     }

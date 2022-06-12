@@ -1,12 +1,9 @@
 package ru.javarush.wildisland.animals.abstracts;
 
-import ru.javarush.wildisland.IslandItem;
-
 public abstract class Animal extends IslandItem {
-    int weigh;
-    int movingSpeed;
-    int kilogramsForSatiety;
-
+    public static double neededSatiety;
+    public int speed;
+    public double Satiety;
 
     public Animal() {
         super();
