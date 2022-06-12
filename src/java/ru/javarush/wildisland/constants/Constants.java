@@ -28,6 +28,7 @@ public class Constants {
     public static final int PLANT_AMOUNT = 200;
 
     public static HashMap<IslandItem, Integer> islandItems = new HashMap<>();
+
     static {
         islandItems.put(new Boar(), BOAR_AMOUNT);
         islandItems.put(new Buffalo(), BUFFALO_AMOUNT);

@@ -22,7 +22,7 @@ public class IslandDay implements Callable<StatisticAfterDay> {
         List<Callable<StatisticAfterDay>> dayTasks = new ArrayList<>();
         IslandArea islandArea = IslandArea.getInstance();
         for (int i = 0; i < islandArea.islandArray.length; i++) {
-            for (int j = 0; j <islandArea.islandArray[i].length; j++) {
+            for (int j = 0; j < islandArea.islandArray[i].length; j++) {
                 dayTasks.add(new CellDay(islandArea.islandArray[i][j]));
             }
         }
@@ -34,7 +34,7 @@ public class IslandDay implements Callable<StatisticAfterDay> {
         return null;
     }
 
-    public static int coresCalculate(){
+    public static int coresCalculate() {
         return Runtime.getRuntime().availableProcessors();
     }
 }

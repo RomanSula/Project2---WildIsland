@@ -9,8 +9,9 @@ public class IslandArea {
 
     private IslandArea() {
     }
-    public static IslandArea getInstance(){
-        if (islandArea == null){
+
+    public static IslandArea getInstance() {
+        if (islandArea == null) {
             islandArea = new IslandArea();
         }
         return islandArea;

@@ -25,6 +25,7 @@ public class WorldGenerator {
             }
         }
     }
+
     public static Set<IslandItem> generateAnimalsAndPlants() {
         Set<IslandItem> generatedItems = new HashSet<>();
         Random random = new Random();
@@ -33,10 +34,9 @@ public class WorldGenerator {
             Class<IslandItem> animalClass = (Class<IslandItem>) islandItem.getKey().getClass();
             int itemCountFromRandom;
 
-            if (islandItem.getKey() instanceof Herb){
+            if (islandItem.getKey() instanceof Herb) {
                 itemCountFromRandom = islandItem.getValue();
-            }
-            else {
+            } else {
                 itemCountFromRandom = random.nextInt(islandItem.getValue());
                 animalItems += itemCountFromRandom;
             }
@@ -48,7 +48,7 @@ public class WorldGenerator {
         return generatedItems;
     }
 
-    public static IslandItem createIslandItemFromClass(Class<IslandItem> itemClass){
+    public static IslandItem createIslandItemFromClass(Class<IslandItem> itemClass) {
         IslandItem islandItem = null;
         try {
             Constructor<IslandItem> constructor = (Constructor<IslandItem>) itemClass.getConstructors()[0];
