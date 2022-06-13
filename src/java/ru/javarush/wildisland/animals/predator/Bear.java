@@ -7,9 +7,9 @@ import ru.javarush.wildisland.plants.Herb;
 import java.util.HashMap;
 
 public class Bear extends PredatorAnimal {
-    public static HashMap<String, Integer> eatingProbability = new HashMap<>();
 
-    static {
+    public Bear() {
+        super();
         eatingProbability.put(Herb.class.getSimpleName(), 100);
         eatingProbability.put(Boa.class.getSimpleName(), 80);
         eatingProbability.put(Horse.class.getSimpleName(), 40);
@@ -21,14 +21,11 @@ public class Bear extends PredatorAnimal {
         eatingProbability.put(Boar.class.getSimpleName(), 50);
         eatingProbability.put(Buffalo.class.getSimpleName(), 20);
         eatingProbability.put(Duck.class.getSimpleName(), 10);
-    }
 
-    public Bear() {
-        super();
         neededSatiety = 80;
 
         this.weight = 500;
         this.speed = 2;
-        this.Satiety = neededSatiety / 2;
+        this.satiety = neededSatiety / 2;
     }
 }

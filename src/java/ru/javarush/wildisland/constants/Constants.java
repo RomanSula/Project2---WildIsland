@@ -8,6 +8,10 @@ import ru.javarush.wildisland.plants.Herb;
 import java.util.HashMap;
 
 public class Constants {
+    public static final String EAT_COMMAND = "eat";
+    public static final String REPRODUCE_COMMAND = "reproduce";
+    public static final String NONE_COMMAND = "none";
+
     public static final int BOAR_AMOUNT = 50;
     public static final int BUFFALO_AMOUNT = 10;
     public static final int CATERPILLAR_AMOUNT = 1000;

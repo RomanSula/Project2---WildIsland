@@ -6,9 +6,9 @@ import ru.javarush.wildisland.animals.herbivore.*;
 import java.util.HashMap;
 
 public class Wolf extends PredatorAnimal {
-    public static HashMap<String, Integer> eatingProbability = new HashMap<>();
 
-    static {
+    public Wolf() {
+        super();
         eatingProbability.put(Horse.class.getSimpleName(), 10);
         eatingProbability.put(Deer.class.getSimpleName(), 15);
         eatingProbability.put(Rabbit.class.getSimpleName(), 60);
@@ -18,14 +18,10 @@ public class Wolf extends PredatorAnimal {
         eatingProbability.put(Boar.class.getSimpleName(), 15);
         eatingProbability.put(Buffalo.class.getSimpleName(), 10);
         eatingProbability.put(Duck.class.getSimpleName(), 40);
-    }
-
-    public Wolf() {
-        super();
         neededSatiety = 8;
 
         this.weight = 50;
         this.speed = 3;
-        this.Satiety = neededSatiety / 2;
+        this.satiety = neededSatiety / 2;
     }
 }

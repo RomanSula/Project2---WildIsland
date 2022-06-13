@@ -19,6 +19,17 @@ public class IslandDay implements Callable<StatisticAfterDay> {
         System.out.println("Day thread is starting->");
         ExecutorService dayExecutor = Executors.newFixedThreadPool(coresCalculate());
 
+        List<Callable<StatisticAfterDay>> dayTasks = createDayTasks();
+
+        System.out.println(dayTasks.size() + " tasks are ready");
+        System.out.println();
+
+        dayExecutor.invokeAll(dayTasks);
+        System.out.println("*Day was ended*");
+        return null;
+    }
+
+    public List<Callable<StatisticAfterDay>> createDayTasks(){
         List<Callable<StatisticAfterDay>> dayTasks = new ArrayList<>();
         IslandArea islandArea = IslandArea.getInstance();
         for (int i = 0; i < islandArea.islandArray.length; i++) {
@@ -26,12 +37,7 @@ public class IslandDay implements Callable<StatisticAfterDay> {
                 dayTasks.add(new CellDay(islandArea.islandArray[i][j]));
             }
         }
-        System.out.println(dayTasks.size() + " tasks are ready");
-        System.out.println();
-
-        dayExecutor.invokeAll(dayTasks);
-        System.out.println("*Day was ended*");
-        return null;
+        return dayTasks;
     }
 
     public static int coresCalculate() {
