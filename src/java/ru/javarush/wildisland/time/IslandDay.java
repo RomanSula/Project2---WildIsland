@@ -7,10 +7,7 @@ import ru.javarush.wildisland.StatisticAfterDay;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 public class IslandDay implements Callable<StatisticAfterDay> {
 
@@ -24,12 +21,12 @@ public class IslandDay implements Callable<StatisticAfterDay> {
         System.out.println(dayTasks.size() + " tasks are ready");
         System.out.println();
 
-        dayExecutor.invokeAll(dayTasks);
+        List<Future<StatisticAfterDay>> cellsDailyStaticList = dayExecutor.invokeAll(dayTasks);
         System.out.println("*Day was ended*");
         return null;
     }
 
-    public List<Callable<StatisticAfterDay>> createDayTasks(){
+    public List<Callable<StatisticAfterDay>> createDayTasks() {
         List<Callable<StatisticAfterDay>> dayTasks = new ArrayList<>();
         IslandArea islandArea = IslandArea.getInstance();
         for (int i = 0; i < islandArea.islandArray.length; i++) {

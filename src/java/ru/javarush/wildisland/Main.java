@@ -1,5 +1,6 @@
 package ru.javarush.wildisland;
 
+import ru.javarush.wildisland.constants.Constants;
 import ru.javarush.wildisland.time.IslandDay;
 
 import java.util.concurrent.FutureTask;
@@ -7,7 +8,7 @@ import java.util.concurrent.FutureTask;
 public class Main {
     public static void main(String[] args) {
         IslandArea islandArea = IslandArea.getInstance();
-        islandArea.islandArray = CellsGenerator.generate(20, 100);
+        islandArea.islandArray = CellsGenerator.generate(Constants.ISLAND_HEIGHT, Constants.ISLAND_WIDTH);
         System.out.println("----------------");
 
         WorldGenerator.generate();

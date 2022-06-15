@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Random;
 import java.util.Set;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class WorldGenerator {
     public static long totalItems = 0;
@@ -28,21 +29,20 @@ public class WorldGenerator {
 
     public static Set<IslandItem> generateAnimalsAndPlants() {
         Set<IslandItem> generatedItems = new HashSet<>();
-        Random random = new Random();
 
         for (Map.Entry<IslandItem, Integer> islandItem : Constants.islandItems.entrySet()) {
-            Class<IslandItem> animalClass = (Class<IslandItem>) islandItem.getKey().getClass();
+            Class<IslandItem> itemClass = (Class<IslandItem>) islandItem.getKey().getClass();
             int itemCountFromRandom;
 
             if (islandItem.getKey() instanceof Herb) {
                 itemCountFromRandom = islandItem.getValue();
             } else {
-                itemCountFromRandom = random.nextInt(islandItem.getValue());
+                itemCountFromRandom = ThreadLocalRandom.current().nextInt(islandItem.getValue());
                 animalItems += itemCountFromRandom;
             }
 
             for (int i = 0; i < itemCountFromRandom; i++) {
-                generatedItems.add(createIslandItemFromClass(animalClass));
+                generatedItems.add(createIslandItemFromClass(itemClass));
             }
         }
         return generatedItems;
@@ -53,9 +53,7 @@ public class WorldGenerator {
         try {
             Constructor<IslandItem> constructor = (Constructor<IslandItem>) itemClass.getConstructors()[0];
             islandItem = constructor.newInstance(new Object[constructor.getParameterCount()]);
-        } catch (InstantiationException | IllegalAccessException e) {
-            System.err.println("Some problems with creating Island Item " + itemClass.getSimpleName());
-        } catch (InvocationTargetException e) {
+        } catch (InstantiationException | IllegalAccessException | InvocationTargetException e) {
             System.err.println("Some problems with creating Island Item " + itemClass.getSimpleName());
         }
         return islandItem;

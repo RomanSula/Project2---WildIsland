@@ -8,6 +8,12 @@ import ru.javarush.wildisland.plants.Herb;
 import java.util.HashMap;
 
 public class Constants {
+    public static final int ISLAND_HEIGHT = 20;
+    public static final int ISLAND_WIDTH = 100;
+
+    public static final int REPRODUCE_PROBABILITY = 50;
+    public static final double SATIETY_FOR_DEATH = 0.3;
+
     public static final String EAT_COMMAND = "eat";
     public static final String REPRODUCE_COMMAND = "reproduce";
     public static final String NONE_COMMAND = "none";
