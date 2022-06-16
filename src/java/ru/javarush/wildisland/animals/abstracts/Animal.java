@@ -47,8 +47,9 @@ public abstract class Animal extends IslandItem {
         } else return null;
     }
 
-    public String moveToNewArea(String cellId) {
-        String newCellId;
+    public int[] moveToNewArea(String cellId) {
+        //String newCellId;
+        int[] newCoordinate = new int[2];
         String[] coordinates = cellId.split(":");
         int horizontalCoordinate = Integer.parseInt(coordinates[1]);
         int verticalCoordinate = Integer.parseInt(coordinates[0]);
@@ -83,6 +84,8 @@ public abstract class Animal extends IslandItem {
                 }
             }
         }
-        return newCellId = "" + verticalCoordinate + ":" + horizontalCoordinate;
+        newCoordinate[0] = verticalCoordinate;
+        newCoordinate[1] = horizontalCoordinate;
+        return newCoordinate;
     }
 }
