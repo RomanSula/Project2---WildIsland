@@ -1,7 +1,4 @@
-package ru.javarush.wildisland;
-
-import java.util.HashMap;
-import java.util.Set;
+package ru.javarush.wildisland.island;
 
 public class IslandArea {
     private static IslandArea islandArea;

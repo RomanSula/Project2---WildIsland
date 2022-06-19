@@ -1,13 +1,12 @@
 package ru.javarush.wildisland.time;
 
-import ru.javarush.wildisland.*;
 import ru.javarush.wildisland.animals.abstracts.Animal;
 import ru.javarush.wildisland.animals.abstracts.IslandItem;
-import ru.javarush.wildisland.animals.abstracts.Plant;
 import ru.javarush.wildisland.animals.herbivore.Caterpillar;
-import ru.javarush.wildisland.animals.predator.Wolf;
 import ru.javarush.wildisland.constants.Constants;
-import ru.javarush.wildisland.plants.Herb;
+import ru.javarush.wildisland.island.IslandAreaCell;
+import ru.javarush.wildisland.statistics.IslandDayResult;
+import ru.javarush.wildisland.statistics.StatisticAfterDay;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -25,8 +24,6 @@ public class CellDay implements Callable<IslandDayResult> {
 
     @Override
     public IslandDayResult call() throws Exception {
-
-        Map<IslandItem, Integer> islandItemAmount = new HashMap<>();
         StatisticAfterDay statisticAfterDay = new StatisticAfterDay(areaCell);
         long itemsBefore = areaCell.cellIslandItems.size();
         killWeakenedAnimals();
@@ -53,20 +50,13 @@ public class CellDay implements Callable<IslandDayResult> {
                         statisticAfterDay.reproducedAnimals++;
                     }
                 }
-                if (action.equals(Constants.NONE_COMMAND)){
+                if (action.equals(Constants.NONE_COMMAND)) {
                     afterActionsSet.add(entry.getKey());
                     afterActionsSet.add(entry.getValue());
                 }
             }
         }
-
-        System.out.println(itemsBefore + "|" + afterActionsSet.size() + " " + statisticAfterDay.deadByHungerAnimals + " Animals dead by hunger: "
-                + statisticAfterDay.eatenAnimals + " Animals have been eaten: "
-                + statisticAfterDay.reproducedAnimals + " Animals were born.");
-
-        //moveAnimals();
-        // TODO: 16.06.2022 заполнить мапу сущностей для вывода в конце дня количества по видам
-        return new IslandDayResult(islandItemAmount, afterActionsSet, statisticAfterDay);
+        return new IslandDayResult(afterActionsSet, statisticAfterDay);
     }
 
     public static String chooseAnActionForPair(Animal master, IslandItem slave) {
@@ -108,17 +98,5 @@ public class CellDay implements Callable<IslandDayResult> {
         return pairs;
     }
 
-    public void moveAnimals(){
-        IslandAreaCell[][] newIslandAreaCell = CellsGenerator.generate(Constants.ISLAND_HEIGHT, Constants.ISLAND_WIDTH);
-        //подумать о переносе этого метода в IslandDay и уже там формировать ячейки с сетами сущностей
-        //для нового дня. !!! Как запустить новый день с новыми параметрами?
-        for (IslandItem islandItem : afterActionsSet) {
-            int[] newCoordinate = new  int[2];
-            newCoordinate = ((Animal)islandItem).moveToNewArea(areaCell.cellId);
-            newIslandAreaCell[newCoordinate[0]][newCoordinate[1]].cellIslandItems.add(islandItem);
-            //System.out.println(islandItem.getClass().getSimpleName() + " moved from " + areaCell.cellId + " to " + newCellId);
-        }
-        System.out.println("new Cells array ready" + newIslandAreaCell.length);
 
-    }
 }

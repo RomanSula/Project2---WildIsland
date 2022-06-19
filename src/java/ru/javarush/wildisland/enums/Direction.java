@@ -1,4 +1,4 @@
-package ru.javarush.wildisland;
+package ru.javarush.wildisland.enums;
 
 public enum Direction {
     LEFT, UP, RIGHT, DOWN

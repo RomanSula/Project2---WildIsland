@@ -1,4 +1,6 @@
-package ru.javarush.wildisland;
+package ru.javarush.wildisland.statistics;
+
+import ru.javarush.wildisland.island.IslandAreaCell;
 
 public class StatisticAfterDay {
     public IslandAreaCell areaCell;

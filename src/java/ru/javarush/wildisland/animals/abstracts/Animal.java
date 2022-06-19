@@ -1,7 +1,7 @@
 package ru.javarush.wildisland.animals.abstracts;
 
-import ru.javarush.wildisland.Direction;
-import ru.javarush.wildisland.WorldGenerator;
+import ru.javarush.wildisland.enums.Direction;
+import ru.javarush.wildisland.island.WorldGenerator;
 import ru.javarush.wildisland.constants.Constants;
 
 import java.util.HashMap;
@@ -57,30 +57,26 @@ public abstract class Animal extends IslandItem {
         for (int i = 0; i < this.speed; i++) {
             int directionNumber = ThreadLocalRandom.current().nextInt(0, 4);
             Direction direction = Direction.values()[directionNumber];
-            switch (direction){
+            switch (direction) {
                 case LEFT -> {
-                    if (horizontalCoordinate - 1 >= 0){
+                    if (horizontalCoordinate - 1 >= 0) {
                         horizontalCoordinate--;
-                    }
-                    else i--;
+                    } else i--;
                 }
                 case UP -> {
-                    if (verticalCoordinate - 1 >= 0){
+                    if (verticalCoordinate - 1 >= 0) {
                         verticalCoordinate--;
-                    }
-                    else i--;
+                    } else i--;
                 }
-                case RIGHT ->{
-                    if (horizontalCoordinate + 1 < Constants.ISLAND_WIDTH){
+                case RIGHT -> {
+                    if (horizontalCoordinate + 1 < Constants.ISLAND_WIDTH) {
                         horizontalCoordinate++;
-                    }
-                    else i--;
+                    } else i--;
                 }
-                case DOWN ->{
-                    if (verticalCoordinate + 1 < Constants.ISLAND_HEIGHT){
+                case DOWN -> {
+                    if (verticalCoordinate + 1 < Constants.ISLAND_HEIGHT) {
                         verticalCoordinate++;
-                    }
-                    else i--;
+                    } else i--;
                 }
             }
         }

@@ -1,14 +1,14 @@
-package ru.javarush.wildisland;
+package ru.javarush.wildisland.island;
 
 import ru.javarush.wildisland.animals.abstracts.IslandItem;
 import ru.javarush.wildisland.constants.Constants;
+import ru.javarush.wildisland.island.IslandArea;
 import ru.javarush.wildisland.plants.Herb;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashSet;
 import java.util.Map;
-import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 

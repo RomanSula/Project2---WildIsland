@@ -1,4 +1,6 @@
-package ru.javarush.wildisland;
+package ru.javarush.wildisland.island;
+
+import ru.javarush.wildisland.island.IslandAreaCell;
 
 public class CellsGenerator {
     public static IslandAreaCell[][] generate(int height, int width) {

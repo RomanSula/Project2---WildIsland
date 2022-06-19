@@ -1,19 +1,16 @@
-package ru.javarush.wildisland;
+package ru.javarush.wildisland.statistics;
 
 import ru.javarush.wildisland.animals.abstracts.IslandItem;
+import ru.javarush.wildisland.statistics.StatisticAfterDay;
 
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 public class IslandDayResult {
-    public Map<IslandItem, Integer> islandItemAmount = new HashMap<>();
     public Set<IslandItem> afterActionsSet = new HashSet<>();
     public StatisticAfterDay statisticAfterDay;
 
-    public IslandDayResult(Map<IslandItem, Integer> islandItemAmount, Set<IslandItem> afterActionsSet, StatisticAfterDay statisticAfterDay) {
-        this.islandItemAmount = islandItemAmount;
+    public IslandDayResult(Set<IslandItem> afterActionsSet, StatisticAfterDay statisticAfterDay) {
         this.afterActionsSet = afterActionsSet;
         this.statisticAfterDay = statisticAfterDay;
     }

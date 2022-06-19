@@ -11,6 +11,8 @@ public class Constants {
     public static final int ISLAND_HEIGHT = 20;
     public static final int ISLAND_WIDTH = 100;
 
+    public static final long MAX_ISLAND_ITEM_VALUE = 4_000_000L;
+
     public static final int REPRODUCE_PROBABILITY = 50;
     public static final double SATIETY_FOR_DEATH = 0.3;
 
@@ -37,6 +39,19 @@ public class Constants {
 
     public static final int PLANT_AMOUNT = 200;
 
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+
+    public static final String START_CONSOLE_MESSAGE = """
+            Greetings! You’ve launched a simulation of life on the island.
+            Enter the number of days to start the simulation...
+            """;
+
     public static HashMap<IslandItem, Integer> islandItems = new HashMap<>();
 
     static {
@@ -58,5 +73,7 @@ public class Constants {
         islandItems.put(new Wolf(), WOLF_AMOUNT);
 
         islandItems.put(new Herb(), PLANT_AMOUNT);
+
+
     }
 }
