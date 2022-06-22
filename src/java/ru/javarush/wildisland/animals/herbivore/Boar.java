@@ -1,15 +1,9 @@
 package ru.javarush.wildisland.animals.herbivore;
 
-import ru.javarush.wildisland.animals.abstracts.HerbivoreAnimal;
-import ru.javarush.wildisland.animals.abstracts.IslandItem;
+import ru.javarush.wildisland.animals.abstracts.Animal;
 import ru.javarush.wildisland.plants.Herb;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.ThreadLocalRandom;
-
-public class Boar extends HerbivoreAnimal {
+public class Boar extends Animal {
 
     public Boar() {
         super();

@@ -1,11 +1,9 @@
 package ru.javarush.wildisland.animals.predator;
 
-import ru.javarush.wildisland.animals.abstracts.PredatorAnimal;
+import ru.javarush.wildisland.animals.abstracts.Animal;
 import ru.javarush.wildisland.animals.herbivore.*;
 
-import java.util.HashMap;
-
-public class Boa extends PredatorAnimal {
+public class Boa extends Animal {
 
     public Boa() {
         super();

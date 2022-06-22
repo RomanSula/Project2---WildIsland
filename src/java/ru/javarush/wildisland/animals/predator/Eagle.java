@@ -1,13 +1,11 @@
 package ru.javarush.wildisland.animals.predator;
 
-import ru.javarush.wildisland.animals.abstracts.PredatorAnimal;
+import ru.javarush.wildisland.animals.abstracts.Animal;
 import ru.javarush.wildisland.animals.herbivore.Duck;
 import ru.javarush.wildisland.animals.herbivore.Mouse;
 import ru.javarush.wildisland.animals.herbivore.Rabbit;
 
-import java.util.HashMap;
-
-public class Eagle extends PredatorAnimal {
+public class Eagle extends Animal {
 
     public Eagle() {
         super();

@@ -1,11 +1,9 @@
 package ru.javarush.wildisland.animals.herbivore;
 
-import ru.javarush.wildisland.animals.abstracts.HerbivoreAnimal;
+import ru.javarush.wildisland.animals.abstracts.Animal;
 import ru.javarush.wildisland.plants.Herb;
 
-import java.util.HashMap;
-
-public class Deer extends HerbivoreAnimal {
+public class Deer extends Animal {
 
     public Deer() {
         super();
