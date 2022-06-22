@@ -26,7 +26,7 @@ public abstract class Animal extends IslandItem {
         }
         int tmp = ThreadLocalRandom.current().nextInt(100);
         boolean isEatIt = tmp <= probability;
-        //System.out.println(this.getClass().getSimpleName() + "->" + targetItem.getClass().getSimpleName() + "(" + tmp + ":" + probability + ")");
+
         if (isEatIt) {
             this.satiety += targetItem.weight;
             this.satiety = Math.min(this.satiety, neededSatiety);
