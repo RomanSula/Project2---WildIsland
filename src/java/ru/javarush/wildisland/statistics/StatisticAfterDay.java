@@ -1,0 +1,15 @@
+package ru.javarush.wildisland.statistics;
+
+import ru.javarush.wildisland.island.IslandAreaCell;
+
+public class StatisticAfterDay {
+    public IslandAreaCell areaCell;
+
+    public long eatenAnimals = 0;
+    public long deadByHungerAnimals = 0;
+    public long reproducedAnimals = 0;
+
+    public StatisticAfterDay(IslandAreaCell islandAreaCell) {
+        this.areaCell = islandAreaCell;
+    }
+}
